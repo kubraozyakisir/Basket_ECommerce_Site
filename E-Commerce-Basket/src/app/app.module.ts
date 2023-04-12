@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/layouts/navbar/navbar.component';
+import { StoreModule } from '@ngrx/store';
+import { BasketsReducer } from './state/baskets/baskets.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { NavbarComponent } from './components/layouts/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({"basketCount":BasketsReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

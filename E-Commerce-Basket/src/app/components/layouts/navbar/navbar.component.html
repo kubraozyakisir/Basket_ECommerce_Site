@@ -10,7 +10,10 @@
           <a class="nav-link active" aria-current="page" rooterLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Basket</a>
+          <a class="nav-link">
+            Basket
+            <span class="badge bg-danger">{{basketCount$ | async}}</span>
+          </a>
         </li>
       </ul>
       <!-- <form class="d-flex" role="search">

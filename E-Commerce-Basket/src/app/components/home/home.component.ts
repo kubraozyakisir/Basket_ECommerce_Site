@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ProductModel } from 'src/app/models/product.model';
 
 @Component({
@@ -7,9 +8,10 @@ import { ProductModel } from 'src/app/models/product.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  products:ProductModel[]=[
+  products:ProductModel[]=[]
 
-  ]
+  constructor(
+    private store : Store){}
 
     ngOnInit(): void {
       this.setProducts();
@@ -24,8 +26,8 @@ export class HomeComponent implements OnInit{
           this.products.push(product);
       }
     }
-
-
-
-
+    addBasket(){
+      //this.store.dispatch({"type":"[Baskets] AddCount"})
+      this.store.dispatch({"type":"[Baskets] AddCount"})
+    }
 }

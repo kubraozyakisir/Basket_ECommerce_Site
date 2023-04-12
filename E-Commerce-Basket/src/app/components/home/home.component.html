@@ -7,7 +7,8 @@
           <h5 class="card-title"> Product Name: {{item.name}}</h5>
           <p class="card-text"> Stock: {{item.stock}}</p>
           <p class="card-text"> Price: {{item.unitPrice}}</p>
-          <a href="#" class="btn btn-primary">Add Basket</a>
+          <a class="btn btn-primary" (click)="addBasket()">Add Basket</a>
+
         </div>
       </div>
     </div>
